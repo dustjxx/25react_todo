@@ -54,15 +54,15 @@ function App() {
     <>
       <div className="p-4 border w-[800px] m-auto mt-12">
         <h1 className="text-2xl font-bold mb-4 text-center">TODO app</h1>
-        <div className="flex gap-2">
+        <div className="flex gap-6">
           <input
             type="text"
             onChange={(e) => {
               setInput(e.target.value);
             }}
             value={input}
-            placeholder=" 오늘의 to-do는 무엇인가요?"
-            className="flex-1 border p-2 rounded border-gray-300 focus:outline-none"
+            placeholder=" 오늘의 to-do는 무엇인가요? "
+            className="w-[800px] flex-1 border p-2 rounded border-gray-300 focus:outline-none"
           />
           <button
             onClick={addTodo}
