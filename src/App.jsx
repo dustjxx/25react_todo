@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TodoItem from "./components/TodoItem";
+import TodoItem from "./components/TodoItem.jsx";
 
 function App() {
   const [input, setInput] = useState("");
@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("todoList 변경");
+    console.log("todoList 갱신");
     localStorage.setItem("todo", JSON.stringify(todoList));
   }, [todoList]);
 
@@ -27,7 +27,7 @@ function App() {
   }
   function addTodo() {
     if (input.trim() === "") {
-      alert(" 내용을 입력해 주세요! ");
+      alert("할일을 입력해 주세요!");
       return;
     }
 
@@ -52,21 +52,31 @@ function App() {
 
   return (
     <>
-      <div className="p-4 border w-[800px] m-auto mt-12">
+      <div className="flex justify-center">
+        <a href="#">
+          <img src="/humming.gif" alt="humming" className="w-20 h-auto" />
+        </a>
+      </div>
+      <div className="p-5 border w-[500px] m-auto">
         <h1 className="text-2xl font-bold mb-4 text-center">TODO app</h1>
-        <div className="flex gap-6">
+        <div className="flex gap-2">
           <input
             type="text"
             onChange={(e) => {
               setInput(e.target.value);
             }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                addTodo();
+              }
+            }}
             value={input}
-            placeholder=" 오늘의 to-do는 무엇인가요? "
-            className="w-[800px] flex-1 border p-2 rounded border-gray-300 focus:outline-none"
+            placeholder="오늘의 to-do는 무엇인가요?"
+            className="flex-1 border p-2 pl-4 rounded-3xl border-gray-300 focus:outline-none"
           />
           <button
             onClick={addTodo}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="px-4 py-2 bg-pink-500 text-white hover:bg-pink-600 rounded-3xl text-bold"
           >
             추가
           </button>
