@@ -27,7 +27,7 @@ function App() {
   }
   function addTodo() {
     if (input.trim() === "") {
-      alert("자료를 입력하세요");
+      alert(" 내용을 입력해 주세요! ");
       return;
     }
 
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <div className="p-4 border w-[500px] m-auto mt-12">
+      <div className="p-4 border w-[800px] m-auto mt-12">
         <h1 className="text-2xl font-bold mb-4 text-center">TODO app</h1>
         <div className="flex gap-2">
           <input
