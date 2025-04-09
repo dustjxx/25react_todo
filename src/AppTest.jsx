@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("todoList 변경");
+    console.log("todoList변화");
     localStorage.setItem("todo", JSON.stringify(todoList));
   }, [todoList]);
 
@@ -43,6 +43,7 @@ function App() {
   }
 
   function toggleTodo(id) {
+    // alert("toggle : " + id);
     setTodoList(
       todoList.map((item) => {
         return item.id === id ? { ...item, completed: !item.completed } : item;
