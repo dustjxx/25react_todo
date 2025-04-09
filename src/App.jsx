@@ -61,7 +61,7 @@ function App() {
               setInput(e.target.value);
             }}
             value={input}
-            placeholder="할일을 입력하세요"
+            placeholder=" 오늘의 to-do는 무엇인가요?"
             className="flex-1 border p-2 rounded border-gray-300 focus:outline-none"
           />
           <button
@@ -76,10 +76,7 @@ function App() {
             return (
               <TodoItem
                 key={i}
-                item={
-                  todoList[i]
-                  // item
-                }
+                item={todoList[i]}
                 toggleTodo1={toggleTodo}
                 deleteTodo={deleteTodo}
               />

@@ -1,12 +1,8 @@
 import React from "react";
 
 function TodoItem({ item, toggleTodo1, deleteTodo }) {
-  //   const item = props.item;
-  //   const test = props.test;
-
-  //   const { item } = props;
   return (
-    <li className="flex justify-between items-center py-4 border-b">
+    <li className="flex justify-between items-center py-4 border-b gap-3">
       <div className="flex gap-3 items-center">
         <input
           type="checkbox"
@@ -29,7 +25,7 @@ function TodoItem({ item, toggleTodo1, deleteTodo }) {
         </span>
       </div>
       <button
-        className="text-red-500 text-sm hover:underline"
+        className="text-red-500 text-sm hover:underline gap-2"
         onClick={() => {
           deleteTodo(item.id);
         }}
